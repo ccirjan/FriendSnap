@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  ChatViewController.h
 //  FriendSnap
 //
 //  Created by cristian cirjan on 12/30/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
-
+@interface ChatViewController : UITableViewController
 
 @end
-
