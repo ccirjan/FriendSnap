@@ -37,10 +37,10 @@
             </objects>
             <point key="canvasLocation" x="1581" y="-332"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="PID-xG-iAW">
             <objects>
-                <viewController id="lBI-G2-X7f" sceneMemberID="viewController">
+                <viewController id="lBI-G2-X7f" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3oK-Kv-vpB"/>
                         <viewControllerLayoutGuide type="bottom" id="LaN-RM-zGt"/>
@@ -165,10 +165,10 @@
             </objects>
             <point key="canvasLocation" x="-216" y="346"/>
         </scene>
-        <!--View Controller-->
+        <!--Signup View Controller-->
         <scene sceneID="duo-st-ReA">
             <objects>
-                <viewController id="2YA-Lt-Jz7" sceneMemberID="viewController">
+                <viewController id="2YA-Lt-Jz7" customClass="SignupViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wWZ-u6-zg4"/>
                         <viewControllerLayoutGuide type="bottom" id="YAO-TD-dXy"/>
@@ -190,6 +190,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6Q-Xj-heU">
                                 <rect key="frame" x="272" y="261" width="74" height="30"/>
                                 <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signup:" destination="2YA-Lt-Jz7" eventType="touchUpInside" id="cm1-Ju-GGj"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Adress" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V8z-U9-8gc">
                                 <rect key="frame" x="138" y="193" width="325" height="30"/>
@@ -202,6 +205,11 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="mlo-bR-m2z"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="emailField" destination="V8z-U9-8gc" id="qVd-3O-aAK"/>
+                        <outlet property="passwordField" destination="04X-0C-O3b" id="vTK-Yt-yeo"/>
+                        <outlet property="usernameField" destination="Icj-2l-Rqg" id="EkT-gP-s2l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fVu-au-RIY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

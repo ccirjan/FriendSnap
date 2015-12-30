@@ -7,6 +7,8 @@
 //
 
 #import "ChatViewController.h"
+#import <Parse/Parse.h>
+
 
 @interface ChatViewController ()
 
@@ -16,6 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+   
     
     [self performSegueWithIdentifier:@"showLogin" sender:self];
     
