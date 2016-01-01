@@ -103,13 +103,13 @@
         <!--Friends-->
         <scene sceneID="HV2-yz-x6O">
             <objects>
-                <tableViewController id="AFa-zR-uaa" sceneMemberID="viewController">
+                <tableViewController id="AFa-zR-uaa" customClass="GroupsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="QfM-7C-BIF">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="groups" id="rQA-hY-cbb">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="rQA-hY-cbb">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rQA-hY-cbb" id="Amy-8H-lMb">
@@ -126,7 +126,7 @@
                     <navigationItem key="navigationItem" title="Friends" id="xrR-JS-Z2u">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="XL1-U9-6l8">
                             <connections>
-                                <segue destination="MBD-iG-cM0" kind="push" id="AAY-AB-pvc"/>
+                                <segue destination="MBD-iG-cM0" kind="push" identifier="showEditFriends" id="AAY-AB-pvc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
