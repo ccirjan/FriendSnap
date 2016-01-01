@@ -30,6 +30,7 @@
 		393E197A1C33D31600CCDEE0 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 393E19791C33D31600CCDEE0 /* libsqlite3.tbd */; };
 		393E197D1C33D72A00CCDEE0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 393E197C1C33D72A00CCDEE0 /* LoginViewController.m */; };
 		393E19801C33D75E00CCDEE0 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 393E197F1C33D75E00CCDEE0 /* SignupViewController.m */; };
+		393E19831C3681DB00CCDEE0 /* EditFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 393E19821C3681DB00CCDEE0 /* EditFriendsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,8 @@
 		393E197C1C33D72A00CCDEE0 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		393E197E1C33D75E00CCDEE0 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
 		393E197F1C33D75E00CCDEE0 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
+		393E19811C3681DB00CCDEE0 /* EditFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditFriendsViewController.h; sourceTree = "<group>"; };
+		393E19821C3681DB00CCDEE0 /* EditFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditFriendsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +167,8 @@
 				393E195E1C33C1DF00CCDEE0 /* ChatViewController.h */,
 				393E195F1C33C1DF00CCDEE0 /* ChatViewController.m */,
 				393E195C1C33BA1900CCDEE0 /* Main.storyboard */,
+				393E19811C3681DB00CCDEE0 /* EditFriendsViewController.h */,
+				393E19821C3681DB00CCDEE0 /* EditFriendsViewController.m */,
 				393E197E1C33D75E00CCDEE0 /* SignupViewController.h */,
 				393E197F1C33D75E00CCDEE0 /* SignupViewController.m */,
 				393E197B1C33D72A00CCDEE0 /* LoginViewController.h */,
@@ -336,6 +341,7 @@
 				393E192B1C33B9E700CCDEE0 /* AppDelegate.m in Sources */,
 				393E19281C33B9E700CCDEE0 /* main.m in Sources */,
 				393E19601C33C1DF00CCDEE0 /* ChatViewController.m in Sources */,
+				393E19831C3681DB00CCDEE0 /* EditFriendsViewController.m in Sources */,
 				393E19801C33D75E00CCDEE0 /* SignupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
