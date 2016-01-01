@@ -7,6 +7,7 @@
 //
 
 #import "SignupViewController.h"
+#import <Parse/Parse.h>
 
 @interface SignupViewController ()
 
@@ -41,34 +42,43 @@
     
     if ([username length] ==0 || [password length]==0 || [email length]== 0) {
         
-        UIAlertController *alert= [UIAlertController alertControllerWithTitle:@"Oops!" message:@"Make sure to enter username!" preferredStyle:(UIAlertControllerStyleAlert)];
+        UIAlertController *alert= [UIAlertController alertControllerWithTitle:@"Oops!" message:@"Make sure to enter username, password, and email!" preferredStyle:(UIAlertControllerStyleAlert)];
         
         UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
                                                               handler:^(UIAlertAction * action) {}];
         
         [alert addAction:defaultAction];
-        [self presentViewController:alert animated:YES completion:nil];
+        [self presentViewController:alert animated:YES completion:nil]; }
+    else {
+      PFUser *newUser = [PFUser user];
+        newUser.username= username;
+        newUser.password=password;
+        newUser.email=email;
         
-//        UIAlertControllerStyleAlert *alertController = UIAlertController(title: @"Default Style", message: @"A standard alert.", preferredStyle: .Alert)
-//        
-//        cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
-//            // ...
-//        }
-//        alertController.addAction(cancelAction)
-//        
-//        OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
-//            // ...
-//        }
-//        alertController.addAction(OKAction)
-//        
-//        self.presentViewController(alertController, animated: true) {
-//            // ...
-//        }
-////        UIAlertController * alertView= [UIAlertController alloc] initwith;
-//        UIAlertControllerStyleAlert *alertView= [UIAlertControllerStyleAlert alloc
-//     // UIAlertView *alertview [[[UIAlertView alloc] initwithTitle:@"Oops!" message:@"Make sure you enter username!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        // other fields can be set just like with PFObject
+ 
+        
+        [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (!error) {
+                [self.navigationController popToRootViewControllerAnimated:YES];
+                // Hooray! Let them use the app now.
+            } else {   NSString *errorString = [error userInfo][@"error"];
+                UIAlertController *alert= [UIAlertController alertControllerWithTitle:@"Error!" message:@"Sorry!" preferredStyle:(UIAlertControllerStyleAlert)];
+                
+                UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                      handler:^(UIAlertAction * action) {}];
+                
+                [alert addAction:defaultAction];
+                [self presentViewController:alert animated:YES completion:nil];
+                // Show the errorString somewhere and let the user try again.
+            }
+        }];
+    
+   
+       
     }
 }
-                              
+
+
                               
 @end

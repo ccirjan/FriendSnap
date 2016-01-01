@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
-        <!--FriendSnap-->
+        <!--Chat View Controller-->
         <scene sceneID="YVb-ZX-A3T">
             <objects>
-                <tableViewController id="anM-Ds-uGC" userLabel="FriendSnap" customClass="ChatViewController" sceneMemberID="viewController">
+                <tableViewController id="anM-Ds-uGC" userLabel="Chat View Controller" customClass="ChatViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="XhY-rj-5vV">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,7 +28,13 @@
                             <outlet property="delegate" destination="anM-Ds-uGC" id="qUL-Um-XzE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Friend Snap" id="3rT-6I-xrd"/>
+                    <navigationItem key="navigationItem" title="Friend Snap" id="3rT-6I-xrd">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="Kdc-pY-nzZ">
+                            <connections>
+                                <action selector="logout:" destination="anM-Ds-uGC" id="uiz-9o-sAi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="lBI-G2-X7f" kind="push" identifier="showLogin" id="crb-e2-a0S"/>
                     </connections>
@@ -37,7 +43,7 @@
             </objects>
             <point key="canvasLocation" x="1581" y="-332"/>
         </scene>
-        <!--Login View Controller-->
+        <!--Friend Snap-->
         <scene sceneID="PID-xG-iAW">
             <objects>
                 <viewController id="lBI-G2-X7f" customClass="LoginViewController" sceneMemberID="viewController">
@@ -62,6 +68,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haX-8O-g6S">
                                 <rect key="frame" x="279" y="189" width="42" height="30"/>
                                 <state key="normal" title="Log In"/>
+                                <connections>
+                                    <action selector="login:" destination="lBI-G2-X7f" eventType="touchUpInside" id="yak-f0-LQ1"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZw-Mz-uAn">
                                 <rect key="frame" x="138" y="227" width="295" height="21"/>
@@ -80,8 +89,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="oti-ep-1kF"/>
+                    <navigationItem key="navigationItem" title="Friend Snap" id="oti-ep-1kF"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="passwordField" destination="sFe-PE-Q4e" id="Jfe-dD-HAL"/>
+                        <outlet property="usernameField" destination="z8d-gU-f9X" id="rgz-1G-wor"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Spn-7Y-9ka" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

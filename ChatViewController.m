@@ -8,6 +8,7 @@
 
 #import "ChatViewController.h"
 #import <Parse/Parse.h>
+#import "LoginViewController.h"
 
 
 @interface ChatViewController ()
@@ -19,9 +20,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    PFUser *currentUser = [PFUser currentUser];
+    if (currentUser) {
+        // do stuff with the user
+        NSLog(@"Current user: %@", currentUser.username);
+    } else {
+        [self performSegueWithIdentifier:@"showLogin" sender:self];
+        // show the signup or login screen
+    }
+
    
     
-    [self performSegueWithIdentifier:@"showLogin" sender:self];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -101,4 +110,20 @@
 }
 */
 
+- (IBAction)logout:(id)sender {
+    
+    [PFUser logOut];
+    [self performSegueWithIdentifier:@"showLogin" sender:self];
+    //PFUser *currentUser = [PFUser currentUser]; // this will now be nil
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"showLogin"]){
+        [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
+        
+        LoginViewController *lvc = segue.destinationViewController;
+        [lvc setHidesBottomBarWhenPushed:YES];
+        lvc.navigationItem.hidesBackButton = YES;
+    }
+}
 @end

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ChatViewController : UITableViewController
+- (IBAction)logout:(id)sender;
 
 @end
