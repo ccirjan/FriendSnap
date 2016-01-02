@@ -90,16 +90,39 @@
     // indicate when a user has been selected
     
     UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.accessoryType= UITableViewCellAccessoryCheckmark;
+    
+    PFUser *user =[self.allUsers objectAtIndex:indexPath.row];
     
     PFRelation * friendsRelation= [self.currentUser relationForKey:@"friendsRelation"];
-    PFUser *user =[self.allUsers objectAtIndex:indexPath.row];
-    [friendsRelation addObject:user];
+    
+    if ([self isFriend: user ]){
+        //1. remove checkmark, 2. romove from array of friends 3. remove from backend
+        cell.accessoryType= UITableViewCellAccessoryNone;
+        for(PFUser *friend in self.friends) {
+            if ([friend.objectId isEqualToString:user.objectId]) {
+                [self.friends removeObject:friend];
+                break;
+            }
+        }
+      
+        [friendsRelation removeObject:user];
+      
+    }
+    
+    else{
+        // add friends and save in background
+        cell.accessoryType= UITableViewCellAccessoryCheckmark;
+        [self.friends addObject:user];
+        [friendsRelation addObject:user];
+        
+    }
+    
     [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
         if (error){
             NSLog(@"Error %@ %@", error, [error userInfo]);
         }
     }];
+
     
     
 
