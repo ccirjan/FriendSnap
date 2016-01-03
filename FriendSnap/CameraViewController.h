@@ -19,4 +19,8 @@
 @property (nonatomic, strong) NSArray *friends;
 @property (nonatomic, strong) PFRelation *friendsRelation;
 @property (nonatomic, strong) NSMutableArray * recipients;
+
+- (IBAction)cancel:(id)sender;
+
+
 @end

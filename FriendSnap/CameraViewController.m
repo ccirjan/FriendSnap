@@ -129,6 +129,14 @@
     PFUser *user= [self.friends objectAtIndex:indexPath.row];
     cell.textLabel.text=user.username;
     
+    // when there are more friends than cells on the screen, cells get reused, but the checkmarks are now distributed to different friends (when you scroll down). This if-else statement fixes that.
+    if ([self. recipients containsObject:user.objectId]){
+        cell.accessoryType=UITableViewCellAccessoryCheckmark;
+    }
+    else {
+        cell.accessoryType=UITableViewCellAccessoryNone;
+    }
+    
     return cell;
 }
 
@@ -142,7 +150,7 @@
     
     UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
     PFUser *user =[self.friends objectAtIndex:indexPath.row];
-    
+    // adds checkmark to (uncheckmarked) friends, and deletes to (checkmarked) friends
     if(cell.accessoryType==UITableViewCellAccessoryNone) {
         cell.accessoryType=UITableViewCellAccessoryCheckmark;
         [self.recipients addObject:user.objectId];
@@ -206,5 +214,13 @@
     // Pass the selected object to the new view controller.
 }
 */
+#pragma mark - IBActions
 
+- (IBAction)cancel:(id)sender {
+    self.image=nil;
+    self.videoFilePath=nil;
+    [self.recipients removeAllObjects];
+    
+    [self.tabBarController setSelectedIndex:0];
+}
 @end
