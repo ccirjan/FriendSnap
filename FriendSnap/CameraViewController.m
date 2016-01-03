@@ -223,4 +223,24 @@
     
     [self.tabBarController setSelectedIndex:0];
 }
+
+- (IBAction)send:(id)sender {
+    if (self.image==nil && [self.videoFilePath length]==0){
+        UIAlertController *alert= [UIAlertController alertControllerWithTitle:@"Try Again!" message:@"Please capture or select a photo or video to share!" preferredStyle:(UIAlertControllerStyleAlert)];
+        
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {}];
+        
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+        }
+    else{
+        [self uploadMessage];
+        [self.tabBarController setSelectedIndex:0];
+    }
+}
+#pragma mark - Helper methods
+-(void) uploadMessage{
+    
+}
 @end

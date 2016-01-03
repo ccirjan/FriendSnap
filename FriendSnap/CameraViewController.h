@@ -22,5 +22,8 @@
 
 - (IBAction)cancel:(id)sender;
 
+- (IBAction)send:(id)sender;
+
+- (void) uploadMessage;
 
 @end

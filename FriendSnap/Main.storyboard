@@ -193,7 +193,11 @@
                                 <action selector="cancel:" destination="oXo-24-Ybb" id="ZPZ-dG-mjy"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Send" id="vVK-4P-p7E"/>
+                        <barButtonItem key="rightBarButtonItem" title="Send" id="vVK-4P-p7E">
+                            <connections>
+                                <action selector="send:" destination="oXo-24-Ybb" id="ofJ-4S-iTG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Yw-Ca-CWx" userLabel="First Responder" sceneMemberID="firstResponder"/>
