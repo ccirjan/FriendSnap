@@ -216,10 +216,10 @@
 */
 #pragma mark - IBActions
 
+
+
 - (IBAction)cancel:(id)sender {
-    self.image=nil;
-    self.videoFilePath=nil;
-    [self.recipients removeAllObjects];
+    [self reset];
     
     [self.tabBarController setSelectedIndex:0];
 }
@@ -236,11 +236,36 @@
         }
     else{
         [self uploadMessage];
+        [self reset];
         [self.tabBarController setSelectedIndex:0];
     }
 }
 #pragma mark - Helper methods
 -(void) uploadMessage{
+    //Check if image or photo
+    // if image, shrink it
+    // upload file itself
+    // upload message details
+    if(self.image !=nil){
+        UIImage *newImage =[self resizeImage:self.image toWidth:320.0f andHeight:480.0f];
+    }
+    
+}
+
+- (void)reset {
+    self.image=nil;
+    self.videoFilePath=nil;
+    [self.recipients removeAllObjects];
+}
+-(UIImage *)resizeImage:(UIImage *)image toWidth:(float)width andHeight:(float)height {
+    CGSize newSize= CGSizeMake(width, height);
+    CGRect newRectangle= CGRectMake(0, 0, width, height);
+    UIGraphicsBeginImageContext(newSize);
+    // resizes image passed in as an argument
+    [image drawInRect:newRectangle];
+    UIImage *resizedImage= UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return resizedImage;
     
 }
 @end
