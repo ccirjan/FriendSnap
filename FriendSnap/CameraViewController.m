@@ -246,10 +246,62 @@
     // if image, shrink it
     // upload file itself
     // upload message details
-    if(self.image !=nil){
-        UIImage *newImage =[self resizeImage:self.image toWidth:320.0f andHeight:480.0f];
-    }
     
+    NSData *fileData;
+    NSString *fileName;
+    NSString *fileType;
+    
+    if(self.image !=nil){
+        // if there is an image to send, we first resize the image in helper method. Then we set file data, name, and type to that resized image. in else clause, we do with video
+        UIImage *newImage =[self resizeImage:self.image toWidth:320.0f andHeight:480.0f];
+        fileData =UIImagePNGRepresentation(newImage);
+        fileName=@"image.png";
+        fileType=@"image";
+    }
+    else {
+        fileData=[NSData dataWithContentsOfFile:self.videoFilePath];
+        fileName=@"video.mov";
+        fileType=@"video";
+    }
+    // PFFfile is the Parse class for files to upload to parse. In this case we are sending the message, which contains our photo or video, and is sent to selected recipients.
+    PFFile *file =[PFFile fileWithName:fileName data:fileData];
+    [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
+        if (error){
+            UIAlertController *alert= [UIAlertController alertControllerWithTitle:@"Error!" message:@"Please send your message again." preferredStyle:(UIAlertControllerStyleAlert)];
+            
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * action) {}];
+            
+            [alert addAction:defaultAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+        else {
+            PFObject *message= [PFObject objectWithClassName:@"Messages"];
+            [message setObject:file forKey:@"file"];
+            [message setObject:fileType forKey:@"fileType"];
+            [message setObject:self.recipients forKey:@"recipientsIds"];
+            [message setObject:[[PFUser currentUser] objectId] forKey:@"senderId"];
+            [message setObject:[[PFUser currentUser] username] forKey:@"senderName"];
+            [message saveInBackgroundWithBlock:^(BOOL succeeded, NSError *  error) {
+                if (error){
+                    UIAlertController *alert= [UIAlertController alertControllerWithTitle:@"Error!" message:@"Please send your message again." preferredStyle:(UIAlertControllerStyleAlert)];
+                    
+                    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                          handler:^(UIAlertAction * action) {}];
+                    
+                    [alert addAction:defaultAction];
+                    [self presentViewController:alert animated:YES completion:nil];
+                }
+                else{
+                    //everything was successful
+                    
+                }
+            }];
+            
+            
+        }
+    }];
+  
 }
 
 - (void)reset {
