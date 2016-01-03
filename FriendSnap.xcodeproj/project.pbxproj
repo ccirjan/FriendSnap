@@ -32,6 +32,7 @@
 		393E19801C33D75E00CCDEE0 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 393E197F1C33D75E00CCDEE0 /* SignupViewController.m */; };
 		393E19831C3681DB00CCDEE0 /* EditFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 393E19821C3681DB00CCDEE0 /* EditFriendsViewController.m */; };
 		393E19861C36907800CCDEE0 /* GroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 393E19851C36907800CCDEE0 /* GroupsViewController.m */; };
+		393E19891C37588800CCDEE0 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 393E19881C37588800CCDEE0 /* CameraViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,8 @@
 		393E19821C3681DB00CCDEE0 /* EditFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditFriendsViewController.m; sourceTree = "<group>"; };
 		393E19841C36907800CCDEE0 /* GroupsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupsViewController.h; sourceTree = "<group>"; };
 		393E19851C36907800CCDEE0 /* GroupsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupsViewController.m; sourceTree = "<group>"; };
+		393E19871C37588800CCDEE0 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		393E19881C37588800CCDEE0 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,10 +166,10 @@
 		393E19251C33B9E700CCDEE0 /* FriendSnap */ = {
 			isa = PBXGroup;
 			children = (
-				393E19291C33B9E700CCDEE0 /* AppDelegate.h */,
 				393E19611C33D18500CCDEE0 /* Parse.framework */,
 				393E19631C33D19100CCDEE0 /* Bolts.framework */,
 				393E192A1C33B9E700CCDEE0 /* AppDelegate.m */,
+				393E19291C33B9E700CCDEE0 /* AppDelegate.h */,
 				393E195E1C33C1DF00CCDEE0 /* ChatViewController.h */,
 				393E195F1C33C1DF00CCDEE0 /* ChatViewController.m */,
 				393E195C1C33BA1900CCDEE0 /* Main.storyboard */,
@@ -174,6 +177,8 @@
 				393E19821C3681DB00CCDEE0 /* EditFriendsViewController.m */,
 				393E19841C36907800CCDEE0 /* GroupsViewController.h */,
 				393E19851C36907800CCDEE0 /* GroupsViewController.m */,
+				393E19871C37588800CCDEE0 /* CameraViewController.h */,
+				393E19881C37588800CCDEE0 /* CameraViewController.m */,
 				393E197E1C33D75E00CCDEE0 /* SignupViewController.h */,
 				393E197F1C33D75E00CCDEE0 /* SignupViewController.m */,
 				393E197B1C33D72A00CCDEE0 /* LoginViewController.h */,
@@ -279,6 +284,7 @@
 				TargetAttributes = {
 					393E19221C33B9E700CCDEE0 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = DLF89ERA48;
 					};
 					393E193E1C33B9E700CCDEE0 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -343,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				393E19861C36907800CCDEE0 /* GroupsViewController.m in Sources */,
+				393E19891C37588800CCDEE0 /* CameraViewController.m in Sources */,
 				393E197D1C33D72A00CCDEE0 /* LoginViewController.m in Sources */,
 				393E192B1C33B9E700CCDEE0 /* AppDelegate.m in Sources */,
 				393E19281C33B9E700CCDEE0 /* main.m in Sources */,
@@ -479,6 +486,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FriendSnap",
@@ -494,6 +502,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FriendSnap",
@@ -572,6 +581,7 @@
 				393E19551C33B9E700CCDEE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		393E19561C33B9E700CCDEE0 /* Build configuration list for PBXNativeTarget "FriendSnapTests" */ = {
 			isa = XCConfigurationList;
@@ -580,6 +590,7 @@
 				393E19581C33B9E700CCDEE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		393E19591C33B9E700CCDEE0 /* Build configuration list for PBXNativeTarget "FriendSnapUITests" */ = {
 			isa = XCConfigurationList;
@@ -588,6 +599,7 @@
 				393E195B1C33B9E700CCDEE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

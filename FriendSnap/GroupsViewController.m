@@ -17,6 +17,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+   
+//    self.friendsRelation= [[PFUser currentUser] relationForKey:@"friendsRelation"];
+//    PFQuery *query = [self.friendsRelation query];
+//    [query orderByAscending:@"username"];
+//    [query findObjectsInBackgroundWithBlock:^(NSArray * objects, NSError *  error) {
+//        if(error) {
+//            NSLog(@"%@ %@", error, [error userInfo]);
+//        }
+//        else{
+//            self.friends=objects;
+//            [self.tableView reloadData];
+//        }
+//    }];
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated{
     // get friends relation using relation for key method. we add any kind of objects by giving them a string key, and then we can acess them by using the relation for key method
     self.friendsRelation= [[PFUser currentUser] relationForKey:@"friendsRelation"];
     PFQuery *query = [self.friendsRelation query];
@@ -30,8 +47,10 @@
             [self.tableView reloadData];
         }
     }];
-    
 }
+
+
+
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showEditFriends"]){
@@ -70,9 +89,6 @@
     
     PFUser *user= [self.friends objectAtIndex:indexPath.row];
     cell.textLabel.text=user.username;
-    
-  
-    
     
     return cell;
 }
