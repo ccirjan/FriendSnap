@@ -36,6 +36,11 @@
     [super viewWillAppear:animated];
     // with the query we retrieve our messages from the parse database, making sure to only recieve messages of which I am a recipient
     PFQuery *query=[PFQuery queryWithClassName:@"Messages"];
+    // prevents error when running for first time in a while
+    if ([[PFUser currentUser] objectId] == nil) {
+        NSLog(@"No objectID");
+    }
+    else{
     [query whereKey:@"recipientsIds" equalTo:[[PFUser currentUser] objectId]];
     [query orderByDescending:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray * objects, NSError *  error) {
@@ -48,9 +53,10 @@
             [self.tableView reloadData];
             NSLog(@"Retrieved %lu messages", (unsigned long)[self.messages count]);
         }
+    
     }];
 }
-
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -59,13 +65,22 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return [self.messages count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    // this function adds users into a row in the editfriends tableview
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    PFObject *message = [self.messages objectAtIndex:indexPath.row];
+    cell.textLabel.text = [message objectForKey:@"senderName"];
+    
+    return cell;
 }
 
 /*
