@@ -5,6 +5,33 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
+        <!--Image View Controller-->
+        <scene sceneID="nKj-JL-j3f">
+            <objects>
+                <viewController id="PiV-en-iSr" customClass="ImageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1OX-dw-Hie"/>
+                        <viewControllerLayoutGuide type="bottom" id="gNS-ry-10v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7eQ-Up-UJz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hhH-OC-DUR">
+                                <rect key="frame" x="0.0" y="64" width="600" height="479"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="VAc-Sr-CuD"/>
+                    <connections>
+                        <outlet property="imageView" destination="hhH-OC-DUR" id="dIl-qf-BSX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e3Z-Np-SzI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2360" y="-1039"/>
+        </scene>
         <!--Chat View Controller-->
         <scene sceneID="YVb-ZX-A3T">
             <objects>
@@ -37,11 +64,12 @@
                     </navigationItem>
                     <connections>
                         <segue destination="lBI-G2-X7f" kind="push" identifier="showLogin" id="crb-e2-a0S"/>
+                        <segue destination="PiV-en-iSr" kind="push" identifier="showImage" id="Wwo-HF-V2Z"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bCo-R3-6xY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1581" y="-332"/>
+            <point key="canvasLocation" x="1673" y="-352"/>
         </scene>
         <!--Friend Snap-->
         <scene sceneID="PID-xG-iAW">
