@@ -27,16 +27,28 @@
     } else {
         [self performSegueWithIdentifier:@"showLogin" sender:self];
         // show the signup or login screen
+    
     }
 
-   
-    
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    // with the query we retrieve our messages from the parse database, making sure to only recieve messages of which I am a recipient
+    PFQuery *query=[PFQuery queryWithClassName:@"Messages"];
+    [query whereKey:@"recipientsIds" equalTo:[[PFUser currentUser] objectId]];
+    [query orderByDescending:@"createdAt"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * objects, NSError *  error) {
+        if (error){
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+        else{
+            // we found messages!
+            self.messages= objects;
+            [self.tableView reloadData];
+            NSLog(@"Retrieved %lu messages", (unsigned long)[self.messages count]);
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

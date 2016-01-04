@@ -47,24 +47,24 @@
     }];
     
     if (self.image == nil && [self.videoFilePath length] == 0) {
-    //    // initialize the picker control
-    self.imagePicker =[[UIImagePickerController alloc]init];
-    // sets the image picker as the delegate of the camera view controller
-    self.imagePicker.delegate=self;
-    // not allowing to edit photos yet.
-    self.imagePicker.allowsEditing=NO;
-    self.imagePicker.videoMaximumDuration= 10;
-    
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    }
-    else {
-        self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    }
-    
-    self.imagePicker.sourceType=UIImagePickerControllerSourceTypeCamera;
-    self.imagePicker.mediaTypes=[UIImagePickerController availableMediaTypesForSourceType:self.imagePicker.sourceType];
-    [self presentViewController:self.imagePicker animated:NO completion:nil];
+        //    // initialize the picker control
+        self.imagePicker =[[UIImagePickerController alloc]init];
+        // sets the image picker as the delegate of the camera view controller
+        self.imagePicker.delegate=self;
+        // not allowing to edit photos yet.
+        self.imagePicker.allowsEditing=NO;
+        self.imagePicker.videoMaximumDuration= 10;
+        
+        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+            self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        }
+        else {
+            self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        }
+        
+        self.imagePicker.sourceType=UIImagePickerControllerSourceTypeCamera;
+        self.imagePicker.mediaTypes=[UIImagePickerController availableMediaTypesForSourceType:self.imagePicker.sourceType];
+        [self presentViewController:self.imagePicker animated:NO completion:nil];
 }
 }
 //- (void)didReceiveMemoryWarning {
@@ -236,7 +236,6 @@
         }
     else{
         [self uploadMessage];
-        [self reset];
         [self.tabBarController setSelectedIndex:0];
     }
 }
@@ -266,6 +265,8 @@
     // PFFfile is the Parse class for files to upload to parse. In this case we are sending the message, which contains our photo or video, and is sent to selected recipients.
     PFFile *file =[PFFile fileWithName:fileName data:fileData];
     [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
+        
+    
         if (error){
             UIAlertController *alert= [UIAlertController alertControllerWithTitle:@"Error!" message:@"Please send your message again." preferredStyle:(UIAlertControllerStyleAlert)];
             
@@ -294,7 +295,7 @@
                 }
                 else{
                     //everything was successful
-                    
+                     [self reset];
                 }
             }];
             
