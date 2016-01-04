@@ -6,14 +6,14 @@
 //  Copyright © 2016 cristian cirjan. All rights reserved.
 //
 
-#import "GroupsViewController.h"
+#import "FriendsViewController.h"
 #import "EditFriendsViewController.h"
 
-@interface GroupsViewController ()
+@interface FriendsViewController ()
 
 @end
 
-@implementation GroupsViewController
+@implementation FriendsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -7,7 +7,7 @@
 //
 
 #import "EditFriendsViewController.h"
-#import "GroupsViewController.h"
+#import "FriendsViewController.h"
 
 
 

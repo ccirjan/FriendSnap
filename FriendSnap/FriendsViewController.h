@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 
 
-@interface GroupsViewController : UITableViewController
+@interface FriendsViewController : UITableViewController
 
 @property (nonatomic, strong) PFRelation *friendsRelation;
 @property (nonatomic, strong) NSArray *friends;

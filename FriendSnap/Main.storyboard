@@ -131,7 +131,7 @@
         <!--Friends-->
         <scene sceneID="HV2-yz-x6O">
             <objects>
-                <tableViewController id="AFa-zR-uaa" customClass="GroupsViewController" sceneMemberID="viewController">
+                <tableViewController id="AFa-zR-uaa" customClass="FriendsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="QfM-7C-BIF">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -321,11 +321,11 @@
             </objects>
             <point key="canvasLocation" x="769" y="-332"/>
         </scene>
-        <!--Groups-->
+        <!--Friends-->
         <scene sceneID="Jlh-bZ-rcP">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fEG-gX-aBa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Groups" id="hHW-Dp-In0"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fEG-gX-aBa" userLabel="Friends" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Friends" id="hHW-Dp-In0" userLabel="Friends"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rdt-kZ-6ME">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
