@@ -14,6 +14,7 @@
 		392D3BE91C39FF1900CB151A /* icon_video.png in Resources */ = {isa = PBXBuildFile; fileRef = 392D3BE81C39FF1900CB151A /* icon_video.png */; };
 		392D3BEB1C39FF1E00CB151A /* icon_video@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 392D3BEA1C39FF1E00CB151A /* icon_video@2x.png */; };
 		392D3BEE1C3A086200CB151A /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 392D3BED1C3A086200CB151A /* ImageViewController.m */; };
+		392D3BF01C3A230E00CB151A /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 392D3BEF1C3A230E00CB151A /* MediaPlayer.framework */; };
 		393E19281C33B9E700CCDEE0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 393E19271C33B9E700CCDEE0 /* main.m */; };
 		393E192B1C33B9E700CCDEE0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 393E192A1C33B9E700CCDEE0 /* AppDelegate.m */; };
 		393E19361C33B9E700CCDEE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 393E19351C33B9E700CCDEE0 /* Assets.xcassets */; };
@@ -68,6 +69,7 @@
 		392D3BEA1C39FF1E00CB151A /* icon_video@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_video@2x.png"; sourceTree = "<group>"; };
 		392D3BEC1C3A086200CB151A /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		392D3BED1C3A086200CB151A /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		392D3BEF1C3A230E00CB151A /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		393E19231C33B9E700CCDEE0 /* FriendSnap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendSnap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		393E19271C33B9E700CCDEE0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		393E19291C33B9E700CCDEE0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				392D3BF01C3A230E00CB151A /* MediaPlayer.framework in Frameworks */,
 				393E197A1C33D31600CCDEE0 /* libsqlite3.tbd in Frameworks */,
 				393E196F1C33D25200CCDEE0 /* AudioToolbox.framework in Frameworks */,
 				393E19701C33D25200CCDEE0 /* CFNetwork.framework in Frameworks */,
@@ -150,6 +153,7 @@
 		393E191A1C33B9E700CCDEE0 = {
 			isa = PBXGroup;
 			children = (
+				392D3BEF1C3A230E00CB151A /* MediaPlayer.framework */,
 				393E19791C33D31600CCDEE0 /* libsqlite3.tbd */,
 				393E19651C33D25200CCDEE0 /* AudioToolbox.framework */,
 				393E19661C33D25200CCDEE0 /* CFNetwork.framework */,
