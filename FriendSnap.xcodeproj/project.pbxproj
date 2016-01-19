@@ -41,6 +41,11 @@
 		393E19831C3681DB00CCDEE0 /* EditFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 393E19821C3681DB00CCDEE0 /* EditFriendsViewController.m */; };
 		393E19861C36907800CCDEE0 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 393E19851C36907800CCDEE0 /* FriendsViewController.m */; };
 		393E19891C37588800CCDEE0 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 393E19881C37588800CCDEE0 /* CameraViewController.m */; };
+		B692C28F1C446D9B0057539A /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B692C28D1C446D9B0057539A /* Bolts.framework */; };
+		B692C2901C446D9B0057539A /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B692C28E1C446D9B0057539A /* Parse.framework */; };
+		B692C29B1C4485690057539A /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B692C29A1C4485690057539A /* GroupsViewController.swift */; };
+		B692C29D1C4489830057539A /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B692C29C1C4489830057539A /* AddGroupViewController.swift */; };
+		B692C29F1C44A7550057539A /* AddFriendsToGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B692C29E1C44A7550057539A /* AddFriendsToGroupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +114,12 @@
 		393E19851C36907800CCDEE0 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
 		393E19871C37588800CCDEE0 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		393E19881C37588800CCDEE0 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		B692C28D1C446D9B0057539A /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		B692C28E1C446D9B0057539A /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		B692C2911C4483210057539A /* FriendSnap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FriendSnap-Bridging-Header.h"; sourceTree = "<group>"; };
+		B692C29A1C4485690057539A /* GroupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
+		B692C29C1C4489830057539A /* AddGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
+		B692C29E1C44A7550057539A /* AddFriendsToGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendsToGroupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,11 +127,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B692C28F1C446D9B0057539A /* Bolts.framework in Frameworks */,
 				392D3BF01C3A230E00CB151A /* MediaPlayer.framework in Frameworks */,
 				393E197A1C33D31600CCDEE0 /* libsqlite3.tbd in Frameworks */,
 				393E196F1C33D25200CCDEE0 /* AudioToolbox.framework in Frameworks */,
 				393E19701C33D25200CCDEE0 /* CFNetwork.framework in Frameworks */,
 				393E19711C33D25200CCDEE0 /* CoreGraphics.framework in Frameworks */,
+				B692C2901C446D9B0057539A /* Parse.framework in Frameworks */,
 				393E19721C33D25200CCDEE0 /* CoreLocation.framework in Frameworks */,
 				393E19731C33D25200CCDEE0 /* libz.1.1.3.tbd in Frameworks */,
 				393E19741C33D25200CCDEE0 /* MobileCoreServices.framework in Frameworks */,
@@ -153,6 +166,8 @@
 		393E191A1C33B9E700CCDEE0 = {
 			isa = PBXGroup;
 			children = (
+				B692C28D1C446D9B0057539A /* Bolts.framework */,
+				B692C28E1C446D9B0057539A /* Parse.framework */,
 				392D3BEF1C3A230E00CB151A /* MediaPlayer.framework */,
 				393E19791C33D31600CCDEE0 /* libsqlite3.tbd */,
 				393E19651C33D25200CCDEE0 /* AudioToolbox.framework */,
@@ -198,12 +213,15 @@
 				393E195E1C33C1DF00CCDEE0 /* ChatViewController.h */,
 				393E195F1C33C1DF00CCDEE0 /* ChatViewController.m */,
 				393E195C1C33BA1900CCDEE0 /* Main.storyboard */,
+				B692C29C1C4489830057539A /* AddGroupViewController.swift */,
+				B692C29E1C44A7550057539A /* AddFriendsToGroupViewController.swift */,
 				392D3BEC1C3A086200CB151A /* ImageViewController.h */,
 				392D3BED1C3A086200CB151A /* ImageViewController.m */,
 				393E19811C3681DB00CCDEE0 /* EditFriendsViewController.h */,
 				393E19821C3681DB00CCDEE0 /* EditFriendsViewController.m */,
 				393E19841C36907800CCDEE0 /* FriendsViewController.h */,
 				393E19851C36907800CCDEE0 /* FriendsViewController.m */,
+				B692C29A1C4485690057539A /* GroupsViewController.swift */,
 				393E19871C37588800CCDEE0 /* CameraViewController.h */,
 				393E19881C37588800CCDEE0 /* CameraViewController.m */,
 				393E197E1C33D75E00CCDEE0 /* SignupViewController.h */,
@@ -214,6 +232,7 @@
 				393E19371C33B9E700CCDEE0 /* LaunchScreen.storyboard */,
 				393E193A1C33B9E700CCDEE0 /* Info.plist */,
 				393E19261C33B9E700CCDEE0 /* Supporting Files */,
+				B692C2911C4483210057539A /* FriendSnap-Bridging-Header.h */,
 			);
 			path = FriendSnap;
 			sourceTree = "<group>";
@@ -306,6 +325,7 @@
 		393E191B1C33B9E700CCDEE0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "cristian cirjan";
 				TargetAttributes = {
@@ -381,15 +401,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B692C29D1C4489830057539A /* AddGroupViewController.swift in Sources */,
 				393E19861C36907800CCDEE0 /* FriendsViewController.m in Sources */,
 				393E19891C37588800CCDEE0 /* CameraViewController.m in Sources */,
 				393E197D1C33D72A00CCDEE0 /* LoginViewController.m in Sources */,
 				393E192B1C33B9E700CCDEE0 /* AppDelegate.m in Sources */,
+				B692C29B1C4485690057539A /* GroupsViewController.swift in Sources */,
 				393E19281C33B9E700CCDEE0 /* main.m in Sources */,
 				393E19601C33C1DF00CCDEE0 /* ChatViewController.m in Sources */,
 				392D3BEE1C3A086200CB151A /* ImageViewController.m in Sources */,
 				393E19831C3681DB00CCDEE0 /* EditFriendsViewController.m in Sources */,
 				393E19801C33D75E00CCDEE0 /* SignupViewController.m in Sources */,
+				B692C29F1C44A7550057539A /* AddFriendsToGroupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,15 +543,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FriendSnap",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = FriendSnap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = asu.FriendSnap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FriendSnap/FriendSnap-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -536,15 +563,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FriendSnap",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = FriendSnap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = asu.FriendSnap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FriendSnap/FriendSnap-Bridging-Header.h";
 			};
 			name = Release;
 		};
